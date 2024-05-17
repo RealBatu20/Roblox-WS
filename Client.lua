@@ -2,8 +2,6 @@ local Services 						= setmetatable({}, { __index = function(Self, Key) return g
 local Client 						= Services.Players.LocalPlayer
 local SMethod 						= (WebSocket and WebSocket.connect)
 
-if not SMethod then return Client:Kick("Executor is too shitty.") end
-
 local Main 							= function()
 	local Success, WebSocket 		= pcall(SMethod, "ws://localhost:9000/")
     local Closed                    = false
